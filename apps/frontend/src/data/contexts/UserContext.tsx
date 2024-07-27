@@ -14,7 +14,7 @@ export interface UserContextProps {
 const UserContext = createContext<UserContextProps>({} as any);
 
 export function UserProvider({ children }: any) {
-  const { get, set } = useLocalStorage();
+  const { get, set, remove } = useLocalStorage();
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<User | null>(null);
@@ -41,7 +41,7 @@ export function UserProvider({ children }: any) {
   function logout() {
     router.push("/");
     setUser(null);
-    set("user", null);
+    remove("user");
   }
 
   useEffect(() => loadUser(), [loadUser]);

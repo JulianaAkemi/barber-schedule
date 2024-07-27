@@ -14,7 +14,7 @@ export default function Header() {
         <Logo />
 
         <div>
-          {user ? <UserMenu user={user} /> : <Link href="/entrar">Login</Link>}
+          {user ? <UserMenu user={user} /> : <Link href="/login">Login</Link>}
         </div>
       </nav>
     </header>
