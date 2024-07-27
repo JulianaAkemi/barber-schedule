@@ -1,24 +1,27 @@
 "use client";
 
+import OurClients from "@/components/client/OurClients";
+import Employees from "@/components/employee/Employees";
 import TitleSlogan from "@/components/landing/TilteSlogan";
 import ContainerWithBackground from "@/components/shared/ContainerWithBackground";
+import OurServices from "@/components/task/OurServices";
 
 export default function Landing() {
   return (
-    <div>
+    <>
       <TitleSlogan />
 
       <ContainerWithBackground image="/banners/servicos.webp">
-        Services we offer
+        <OurServices />
       </ContainerWithBackground>
 
       <ContainerWithBackground image="/banners/profissionais.webp">
-        Our History
+        <Employees />
       </ContainerWithBackground>
 
       <ContainerWithBackground image="/banners/clientes.webp">
-        Our Clients
+        <OurClients />
       </ContainerWithBackground>
-    </div>
+    </>
   );
 }

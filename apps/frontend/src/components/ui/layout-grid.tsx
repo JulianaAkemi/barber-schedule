@@ -7,7 +7,7 @@ type Card = {
   id: number;
   content: JSX.Element | React.ReactNode | string;
   className: string;
-  thumbnail: string;
+  imageUrl: string;
 };
 
 export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
@@ -62,7 +62,7 @@ const ImageComponent = ({ card }: { card: Card }) => {
   return (
     <motion.img
       layoutId={`image-${card.id}-image`}
-      src={card.thumbnail}
+      src={card.imageUrl}
       height="500"
       width="500"
       className={cn(
