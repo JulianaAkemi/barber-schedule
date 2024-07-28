@@ -10,8 +10,8 @@ export default function Employees() {
   return (
     <div className="container flex flex-col items-center gap-y-16">
       <Title
-        tag="Time"
-        primary="Nossos Brutos"
+        tag="Team"
+        primary="Our Stars"
         secondary="Só os mais brabos estão aqui! Temos o orgulho de ter o time mais qualificado do Brasil!"
       />
 
