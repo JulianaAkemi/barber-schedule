@@ -22,6 +22,7 @@ export class ScheduleController {
     @Param('date') dateParam: string,
   ) {
     const useCase = new GetBusySlots(this.repo);
+
     return useCase.execute(+employee, new Date(dateParam));
   }
 }

@@ -9,14 +9,12 @@ export default class GetBusySlots {
       employeeId,
       date
     );
+
     const slots = appointments
       .map((schedule) => {
         return {
           date: schedule.date,
-          slots: schedule.tasks.reduce(
-            (total: number, s: any) => total + s.qtySlots,
-            0
-          ),
+          slots: schedule.tasks.reduce((total, s) => total + s.slots, 0),
         };
       })
       .reduce((busySlots: Date[], data: any) => {
@@ -25,6 +23,7 @@ export default class GetBusySlots {
         const times = Array.from({ length: slots }, (_, i) =>
           this.sumMinutes(time, i * TIME_SLOT)
         );
+
         return [...busySlots, ...times];
       }, [])
       .map((d) => d.toTimeString().slice(0, 5));
